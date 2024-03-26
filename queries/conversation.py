@@ -30,5 +30,5 @@ def convo(query):
         say("I am Great, and here for your Personal Assistance.")
     elif "how are you" in query:
         say("I am Awesome")
-    elif "ok" in query:
+    elif any(keyword in query.lower() for keyword in ["okay", "hmm", "ok"]):
         say("Hmmm")

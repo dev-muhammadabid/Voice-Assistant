@@ -14,7 +14,7 @@ def navApps(query):
             say(f"Opening {app[0]}, sir.....")
             os.system(f"open -a '{app[1]}'")
             return
+
         elif f"close {app[0]}".lower() in query.lower():
             say(f"Closing {app[0]}, sir.....")
             os.system(f"pkill -f '{app[1]}'")
-            return

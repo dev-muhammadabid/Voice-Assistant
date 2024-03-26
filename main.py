@@ -5,8 +5,9 @@ from queries.greetMe import greetMe
 from queries.conversation import convo
 from queries.dateTime import dateNow, timeNow, tempNow
 from queries.navApps import navApps
-from queries.navWeb import navWebsites, navDomain, closeTab
+from queries.navWeb import navDomain, closeTab
 from queries.searchNow import searchNow
+from queries.mediaControl import mediaControl
 
 # VOICE FUNCTION
 def say(text, voice="Zoe"):
@@ -61,7 +62,7 @@ if __name__ == "__main__":
         if "time" in query.lower() and "facetime" not in query.lower():
             timeNow()
         # TEMPERATURE QUERY
-        if "temperature" in query:
+        if any(keyword in query.lower() for keyword in ["temperature", "weather"]):
             tempNow()
 
         # APPLICATIONS NAVIGATION QUERY
@@ -70,8 +71,6 @@ if __name__ == "__main__":
 
         # WEBSITES NAVIGATION QUERY
         if query:
-            navWebsites(query)
-        if query:
             navDomain(query)
         if query:
             closeTab(query)
@@ -79,3 +78,7 @@ if __name__ == "__main__":
         # SEARCH ON WEB QUERY
         if query:
             searchNow(query)
+
+        # MEDIA CONTROL QUERY
+        if query:
+            mediaControl(query)

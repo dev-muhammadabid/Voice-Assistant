@@ -37,14 +37,14 @@ def youtubeSearch(query):
     query = query.replace("youtube", "")
     web =  "https://www.youtube.com/results?search_query=" + query
     webbrowser.open(web)
-    # pywhatkit.playonyt(query)
+    pywhatkit.playonyt(query)
     say("That is what I found on Youtube")
 
 # WIKIPEDIA FUNCTION
 def wikipediaSearch(query):
     query = query.replace("wikipedia search", "")
     query = query.replace("wikipedia", "")
-    result = wikipedia.summary(query, sentences = 2)
+    result = wikipedia.summary(query, sentences = 1)
     say("According to Wikipedia...")
     print(result)
     say(result)
