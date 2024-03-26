@@ -8,7 +8,7 @@ def say(text, voice="Zoe"):
 
 # DOMAIN WEBSITES OPEN FUNCTION
 def navDomain(query):
-    if ".com" in query or ".co.in" in query or ".org" in query or ".in" in query or ".me" in query:
+    if any(keyword in query.lower() for keyword in [".com", ".co.in", ".org" ".in", ".me"]):
         query = query.replace("open", "")
         query = query.replace("launch", "")
         query = query.replace(" ", "")

@@ -8,6 +8,8 @@ from queries.navApps import navApps
 from queries.navWeb import navDomain, closeTab
 from queries.searchNow import searchNow
 from queries.mediaControl import mediaControl
+from queries.newsRead import latestNewsIndia
+from queries.numCalc import Wolframalpha, numCalc
 
 # VOICE FUNCTION
 def say(text, voice="Zoe"):
@@ -82,3 +84,12 @@ if __name__ == "__main__":
         # MEDIA CONTROL QUERY
         if query:
             mediaControl(query)
+
+        # MEDIA CONTROL QUERY
+        if any(keyword in query.lower() for keyword in ["tell me the news", "tell news", "tell me the latest news"]):
+            latestNewsIndia()
+
+        # CALCULATOR QUERY
+        if "calculate" in query:
+            # query = query.replace("calculate", "")
+            numCalc(query)
