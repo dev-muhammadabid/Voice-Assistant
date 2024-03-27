@@ -1,8 +1,8 @@
 # IMPORT PACKAGES
 import os
 import requests
-import wolframalpha
 
+# VOICE FUNCTION
 def say(text, voice="Zoe"):
     os.system(f"say -v {voice} {text}")
 
@@ -26,5 +26,5 @@ def numCalc(query):
     query = query.replace("divide", "/")
 
     result = Wolframalpha(query)
-    print(result)
-    say(result)
+    print("The answer of your calculation is: " + result)
+    say("The answer of your calculation is: " + result)

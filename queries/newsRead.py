@@ -1,6 +1,8 @@
 # IMPORT PACKAGES
 import os
 import requests
+
+# VOICE FUNCTION
 def say(text, voice="Zoe"):
     os.system(f"say -v {voice} {text}")
 

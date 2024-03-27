@@ -1,6 +1,7 @@
 # IMPORT PACKAGES
 import os
 
+# VOICE FUNCTION
 def say(text, voice="Zoe"):
     os.system(f"say -v {voice} {text}")
 

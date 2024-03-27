@@ -1,6 +1,7 @@
 # IMPORT PACKAGES
 import os
 import speech_recognition as sr
+from queries.passwordPin import passwordPin, changePin
 from queries.greetMe import greetMe
 from queries.conversation import convo
 from queries.dateTime import dateNow, timeNow, tempNow
@@ -9,7 +10,8 @@ from queries.navWeb import navDomain, closeTab
 from queries.searchNow import searchNow
 from queries.mediaControl import mediaControl
 from queries.newsRead import latestNewsIndia
-from queries.numCalc import Wolframalpha, numCalc
+from queries.numCalc import numCalc
+from queries.whatsappMsg import sendMsg
 
 # VOICE FUNCTION
 def say(text, voice="Zoe"):
@@ -41,7 +43,10 @@ def takeCommand():
 
 # MAIN FUNCTION
 if __name__ == "__main__":
-    say("Assalamu alaykum Sir, I am your personal Voice Assistant", voice="Zoe")
+    # PASSWORD PROTECTED
+    passwordPin()
+
+    # COMMAND LOOP
     while True:
         query = takeCommand()
 
@@ -49,6 +54,10 @@ if __name__ == "__main__":
         if "allah hafiz" in query:
             say("Allah Hafiz, Sir. You can call me anytime. I will always there for you!")
             exit()
+
+        # CHANGE PASSWORD QUERY
+        if any(keyword in query.lower() for keyword in ["change my pin", "change pin", "change the password", "change password", "change my password"]):
+            changePin()
 
         # GREET QUERY
         if "walekum assalam" in query:
@@ -91,5 +100,9 @@ if __name__ == "__main__":
 
         # CALCULATOR QUERY
         if "calculate" in query:
-            # query = query.replace("calculate", "")
             numCalc(query)
+
+        # WHATSAPP MESSAGE SEND QUERY
+        if "whatsapp" in query:
+            sendMsg()
+

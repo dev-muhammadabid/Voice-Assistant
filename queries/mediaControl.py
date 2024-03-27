@@ -2,6 +2,7 @@
 import os
 from pynput.keyboard import Key, Controller
 
+# VOICE FUNCTION
 def say(text, voice="Zoe"):
     os.system(f"say -v {voice} {text}")
 

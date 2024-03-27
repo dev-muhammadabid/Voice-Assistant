@@ -2,6 +2,7 @@
 import os
 import datetime
 
+# VOICE FUNCTION
 def say(text, voice="Zoe"):
     os.system(f"say -v {voice} {text}")
 

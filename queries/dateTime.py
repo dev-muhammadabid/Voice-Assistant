@@ -4,7 +4,7 @@ import datetime
 import requests
 from bs4 import BeautifulSoup
 
-
+# VOICE FUNCTION
 def say(text, voice="Zoe"):
     os.system(f"say -v {voice} {text}")
 

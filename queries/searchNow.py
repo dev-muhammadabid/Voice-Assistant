@@ -5,6 +5,7 @@ import pywhatkit
 import wikipedia
 import wikipedia as googleScrap
 
+# VOICE FUNCTION
 def say(text, voice="Zoe"):
     os.system(f'say -v {voice} "{text}"')
 
@@ -21,6 +22,8 @@ def searchNow(query):
 def googleSearch(query):
     query = query.replace("google search", "")
     query = query.replace("google", "")
+    query = query.replace("on", "")
+    query = query.replace("open", "")
     say("That is what I found on Web")
 
     try:
@@ -35,6 +38,8 @@ def googleSearch(query):
 def youtubeSearch(query):
     query = query.replace("youtube search", "")
     query = query.replace("youtube", "")
+    query = query.replace("play", "")
+    query = query.replace("on", "")
     web =  "https://www.youtube.com/results?search_query=" + query
     webbrowser.open(web)
     pywhatkit.playonyt(query)
@@ -44,6 +49,7 @@ def youtubeSearch(query):
 def wikipediaSearch(query):
     query = query.replace("wikipedia search", "")
     query = query.replace("wikipedia", "")
+    query = query.replace("on", "")
     result = wikipedia.summary(query, sentences = 1)
     say("According to Wikipedia...")
     print(result)

@@ -3,6 +3,7 @@ import webbrowser
 import os
 import pyautogui
 
+# VOICE FUNCTION
 def say(text, voice="Zoe"):
     os.system(f"say -v {voice} {text}")
 
