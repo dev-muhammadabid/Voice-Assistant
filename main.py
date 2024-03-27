@@ -2,6 +2,7 @@
 import os
 import speech_recognition as sr
 from queries.passwordPin import passwordPin, changePin
+from queries.genralPrupose import screenshotSS
 from queries.greetMe import greetMe
 from queries.conversation import convo
 from queries.dateTime import dateNow, timeNow, tempNow
@@ -45,7 +46,7 @@ def takeCommand():
 # MAIN FUNCTION
 if __name__ == "__main__":
     # PASSWORD PROTECTED
-    # passwordPin()
+    passwordPin()
 
     # COMMAND LOOP
     while True:
@@ -81,6 +82,14 @@ if __name__ == "__main__":
         if query:
             navApps(query)
 
+        # SCREENSHOT QUERY
+        if "screenshot" in query:
+            screenshotSS()
+
+        # CALCULATOR QUERY
+        if "calculate" in query:
+            numCalc(query)
+
         # WEBSITES NAVIGATION QUERY
         if query:
             navDomain(query)
@@ -99,14 +108,11 @@ if __name__ == "__main__":
         if any(keyword in query.lower() for keyword in ["tell me the news", "tell me a news", "tell news", "tell me the latest news"]):
             latestNewsIndia()
 
-        # CALCULATOR QUERY
-        if "calculate" in query:
-            numCalc(query)
-
         # WHATSAPP MESSAGE SEND QUERY
         if "whatsapp" in query:
             sendMsg()
 
-        # MEDIA CONTROL QUERY
+        # GAME QUERY
         if any(keyword in query.lower() for keyword in ["You have games", "let's play a game", "play game"]):
             gameRPS(query)
+
