@@ -12,6 +12,7 @@ from queries.mediaControl import mediaControl
 from queries.newsRead import latestNewsIndia
 from queries.numCalc import numCalc
 from queries.whatsappMsg import sendMsg
+from queries.gameRPS import gameRPS
 
 # VOICE FUNCTION
 def say(text, voice="Zoe"):
@@ -44,7 +45,7 @@ def takeCommand():
 # MAIN FUNCTION
 if __name__ == "__main__":
     # PASSWORD PROTECTED
-    passwordPin()
+    # passwordPin()
 
     # COMMAND LOOP
     while True:
@@ -94,8 +95,8 @@ if __name__ == "__main__":
         if query:
             mediaControl(query)
 
-        # MEDIA CONTROL QUERY
-        if any(keyword in query.lower() for keyword in ["tell me the news", "tell news", "tell me the latest news"]):
+        # NEWS QUERY
+        if any(keyword in query.lower() for keyword in ["tell me the news", "tell me a news", "tell news", "tell me the latest news"]):
             latestNewsIndia()
 
         # CALCULATOR QUERY
@@ -106,3 +107,6 @@ if __name__ == "__main__":
         if "whatsapp" in query:
             sendMsg()
 
+        # MEDIA CONTROL QUERY
+        if any(keyword in query.lower() for keyword in ["You have games", "let's play a game", "play game"]):
+            gameRPS(query)

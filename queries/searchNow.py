@@ -11,11 +11,11 @@ def say(text, voice="Zoe"):
 
 # MAIN FUNCTION
 def searchNow(query):
-    if "google search" in query or "google" in query:
+    if "google search" in query or "on google" in query:
         googleSearch(query)
-    elif "youtube search" in query or "youtube" in query:
+    elif "youtube search" in query or "on youtube" in query:
         youtubeSearch(query)
-    elif "wikipedia search" in query or "wikipedia" in query:
+    elif "wikipedia search" in query or "on wikipedia" in query:
         wikipediaSearch(query)
 
 # GOOGLE FUNCTION
