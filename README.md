@@ -3,11 +3,15 @@
 
 ## Developed to assist users with various tasks using speech recognition and natural language processing.
 
-In the project directory, you can run:
-### `main.exe`
+Code to make an .exe file:
+### `pip install pyinstaller`
+### `pyinstaller --onefile main.py`
 
 Code to install requirements.
 ### `pip install -r requirements.txt`
+
+Run file.
+### `dist/main.exe`
 
 Default password to start voice assistant.
 ### `000000`

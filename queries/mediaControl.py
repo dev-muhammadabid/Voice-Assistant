@@ -41,7 +41,7 @@ def previousMedia():
 
 # MEDIA CONTROL TAB
 def mediaControl(query):
-    if any(keyword in query.lower() for keyword in ["paused", "stop"]):
+    if any(keyword in query.lower() for keyword in ["paused", "stop", "pause"]):
         say("Paused, Sir")
         playPause()
     elif any(keyword in query.lower() for keyword in ["play video", "play the video", "play media", "play the media", "play music", "play the music"]):
